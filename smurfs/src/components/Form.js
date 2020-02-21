@@ -28,14 +28,13 @@ const Form = () => {
     axios
       .post("http://localhost:3333/smurfs", formState)
       .then((response) => {
-        console.log(response);
+     
         setVillage(response.data);
         SetFormState(initialFormState);
         setCounter((counter += 1));
       })
       .catch((error) => setError(error.response.data.Error));
   };
-  console.log(formState);
 
   return (
     <form onSubmit={(event) => handleSubmit(event)}>

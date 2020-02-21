@@ -10,11 +10,9 @@ const App = () => {
   const [village, setVillage] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:3333/smurfs").then((response) => {
-      console.log(response);
       setVillage(response.data);
     });
   }, []);
-  console.log(village);
 
   return (
     <div className="App">
